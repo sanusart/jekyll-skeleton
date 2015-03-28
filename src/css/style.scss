@@ -1,0 +1,25 @@
+$my-color-red: tomato;
+$my-color-blue: skyblue;
+$my-color-grey: grey;
+
+body {
+  & a {
+    color: $my-color-red;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    &:hover {
+      opacity: 0.7;
+      color:$my-color-blue;
+    }
+  }
+
+  & p {
+    font-size: 16px;
+  }
+
+  & h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+  }
+}

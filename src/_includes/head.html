@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html id="top">
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {{% if page.description %}}<meta name="description" content="{{ page.description }}">{{% endif %}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{site.name}}">
+    <meta name="twitter:creator" content="{{page.author | site.author}}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:description" content="{{ page.description }}">
+
+
+    {% include site-wide-head.html %}
+
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+<body class="is-page-{{page.page_name}} {% if page.page_name == 'home'%}home{% else %}inner{% endif %}">
+
+
+<nav>
+    {% for link in site.navigation %}
+      {% assign state = '' %}
+      {% if page.page_name == link.url %}
+        {% assign state = 'active ' %}
+      {% endif %}
+      <a
+      class="nav-link {{ state }} {% if forloop.first %}nav-link-first{% endif %} {{ current }} {% if forloop.last %}nav-link-last{% endif %}"
+      href="{% if forloop.first %}/{% else %}/{{ link.url }}/{% endif %}">{{ link.text }}</a> {% if forloop.last == false %}|{% endif %}
+    {% endfor %}
+</nav>

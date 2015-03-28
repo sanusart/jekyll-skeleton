@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{% include head.html %}
+
+{% if page.page_name == 'home' %}
+    <!-- home specific include may be here -->
+{% endif %}
+
+{{ content }}
+
+{% include footer.html %}
