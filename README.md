@@ -1,12 +1,13 @@
 # jekyll skeleton
 
-jekyll + gulp + sass + bower + browsersync skeleton
+This is mainly structure for jekyll site - pages and posts (blog) with gulp + sass + bower and browsersync.
 
-
+Just clone/fork and use.
 
 ### Depends on:
 
  - jekyll
+ - bundler
  - nodejs
  - npm
 
@@ -58,3 +59,7 @@ jekyll + gulp + sass + bower + browsersync skeleton
     └── README.md
 
 ```
+
+### License:
+
+MIT
